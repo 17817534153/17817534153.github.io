@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://17817534153.github.io/images/pasted-136.png">
 <meta property="og:image" content="https://17817534153.github.io/images/pasted-137.png">
 <meta property="article:published_time" content="2020-05-31T12:00:10.000Z">
-<meta property="article:modified_time" content="2020-11-25T01:39:44.165Z">
+<meta property="article:modified_time" content="2020-11-25T03:40:44.890Z">
 <meta property="article:author" content="A Jie">
 <meta property="article:tag" content="漏洞利用">
 <meta property="article:tag" content="靶场演示">
@@ -107,7 +107,7 @@
 			</ul>
 		</nav>
 		<nav>
-    总文章数 10
+    总文章数 11
 </nav>
 		<nav class="header-smart-menu">
     		
@@ -253,8 +253,33 @@
         
       </header>
     
+
 	<!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">中华人民共和国网络安全法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSRF%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">CSRF简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie"><span class="toc-number">3.</span> <span class="toc-text">Cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B1%E5%AE%B3"><span class="toc-number">5.</span> <span class="toc-text">危害</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%B5%8BCSRF%E6%BC%8F%E6%B4%9E"><span class="toc-number">6.</span> <span class="toc-text">检测CSRF漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87CSRF-%E4%BF%AE%E6%94%B9%E5%8F%97%E5%AE%B3%E8%80%85%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="toc-number">7.</span> <span class="toc-text">通过CSRF 修改受害者的个人信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87CSRF%E6%9D%A5getshell"><span class="toc-number">8.</span> <span class="toc-text">通过CSRF来getshell</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">8.0.1.</span> <span class="toc-text">流程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1CSRF"><span class="toc-number">9.</span> <span class="toc-text">防御CSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E6%80%9D%E8%80%83"><span class="toc-number">10.</span> <span class="toc-text">总结思考</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
@@ -498,7 +523,7 @@
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-11-25T01:39:44.165Z" itemprop="dateUpdated">2020年11月25日 09:39:44</time>
+        <time datetime="2020-11-25T03:40:44.890Z" itemprop="dateUpdated">2020年11月25日 11:40:44</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -679,22 +704,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tag</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
@@ -776,6 +785,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">实战渗透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">SQL注入类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQL注入写webshell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">dnslog注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">漏洞复现</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">易上手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">漏洞挖掘</a>
               </li>
             
             <div class="clearfix"></div>
