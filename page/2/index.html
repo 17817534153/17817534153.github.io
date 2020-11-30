@@ -74,7 +74,7 @@
 			</ul>
 		</nav>
 		<nav>
-    总文章数 14
+    总文章数 17
 </nav>
 		<nav class="header-smart-menu">
     		
@@ -180,6 +180,389 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-MySQL数据库的dnslog注入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+		
+<center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/05/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84dnslog%E6%B3%A8%E5%85%A5/">MySQL数据库的dnslog注入</a>
+    </h1>
+  
+</p></center>
+        
+        <a href="/2020/05/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84dnslog%E6%B3%A8%E5%85%A5/" class="archive-article-date">
+  	<time datetime="2020-05-23T10:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-23</time>
+</a>
+		
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: grey">850字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: grey">3分</span>
+      </span>
+    </span>
+</div>
+          
+        
+      </header>
+    
+
+	<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MySQL数据库作为使用数量最多的数据库，今天为大家带来一个dns注入教程，dns注入使用方法一般是在显错注入,报错注入都不能使用，盲注又太麻烦的情况下进行的，通过load_file()函数，解析dns的时候，将子查询的数据放入到dns日志中来获取数据。</p>
+        
+          <a class="article-more-a" href="/2020/05/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84dnslog%E6%B3%A8%E5%85%A5/#more">more >></a>
+        
+      
+	
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">dnslog</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SQL注入</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+	  <!-- 开始添加阅读量-->
+
+<!-- 添加完成 -->
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84dnslog%E6%B3%A8%E5%85%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+      <!-- 版权声明 -->
+        
+          <!--添加版权声明-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <ul class="copyright" hidden="hidden"></ul>
+
+<!-- 添加版权声明》 -->
+        
+      <!-- 声明结束 -->
+  
+    <article id="post-复现：通达OA任意以管理员身份进入后台" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+		
+<center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/05/13/%E5%A4%8D%E7%8E%B0%EF%BC%9A%E9%80%9A%E8%BE%BEOA%E4%BB%BB%E6%84%8F%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%9B%E5%85%A5%E5%90%8E%E5%8F%B0/">复现：通达OA任意以管理员身份进入后台</a>
+    </h1>
+  
+</p></center>
+        
+        <a href="/2020/05/13/%E5%A4%8D%E7%8E%B0%EF%BC%9A%E9%80%9A%E8%BE%BEOA%E4%BB%BB%E6%84%8F%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%9B%E5%85%A5%E5%90%8E%E5%8F%B0/" class="archive-article-date">
+  	<time datetime="2020-05-13T05:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+</a>
+		
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: grey">398字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: grey">1分</span>
+      </span>
+    </span>
+</div>
+          
+        
+      </header>
+    
+
+	<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>日前通达OA爆出一个大漏洞，用户可以在登录界面，通过修改cookie的方式，以管理员身份登录后台，这里我就来复现一次。</p>
+        
+          <a class="article-more-a" href="/2020/05/13/%E5%A4%8D%E7%8E%B0%EF%BC%9A%E9%80%9A%E8%BE%BEOA%E4%BB%BB%E6%84%8F%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%9B%E5%85%A5%E5%90%8E%E5%8F%B0/#more">more >></a>
+        
+      
+	
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">漏洞利用</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">通达OA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">未授权访问</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">实战演示</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">漏洞复现</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+	  <!-- 开始添加阅读量-->
+
+<!-- 添加完成 -->
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/13/%E5%A4%8D%E7%8E%B0%EF%BC%9A%E9%80%9A%E8%BE%BEOA%E4%BB%BB%E6%84%8F%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%9B%E5%85%A5%E5%90%8E%E5%8F%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+      <!-- 版权声明 -->
+        
+          <!--添加版权声明-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <ul class="copyright" hidden="hidden"></ul>
+
+<!-- 添加版权声明》 -->
+        
+      <!-- 声明结束 -->
+  
+    <article id="post-干货：SQL注入如何绕过WAF" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+		
+<center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title_code_ant" href="/2020/05/12/%E5%B9%B2%E8%B4%A7%EF%BC%9ASQL%E6%B3%A8%E5%85%A5%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87WAF/">干货：SQL注入如何绕过WAF</a>
+    </h1>
+  
+</p></center>
+        
+        <a href="/2020/05/12/%E5%B9%B2%E8%B4%A7%EF%BC%9ASQL%E6%B3%A8%E5%85%A5%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87WAF/" class="archive-article-date">
+  	<time datetime="2020-05-12T11:05:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+		
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: grey">1.4k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: grey">6分</span>
+      </span>
+    </span>
+</div>
+          
+        
+      </header>
+    
+
+	<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在进行渗透测试的时候，各式各样的waf层出不穷，阻拦了我们渗透测试的步伐。为了让大家少走一些弯路，我特地为大家出一篇文章，教大家如何绕过waf。<br>
+        
+          <a class="article-more-a" href="/2020/05/12/%E5%B9%B2%E8%B4%A7%EF%BC%9ASQL%E6%B3%A8%E5%85%A5%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87WAF/#more">more >></a>
+        
+      
+	
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SQL注入</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">WAF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">绕过</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+	  <!-- 开始添加阅读量-->
+
+<!-- 添加完成 -->
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/12/%E5%B9%B2%E8%B4%A7%EF%BC%9ASQL%E6%B3%A8%E5%85%A5%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87WAF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+      <!-- 版权声明 -->
+        
+          <!--添加版权声明-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <ul class="copyright" hidden="hidden"></ul>
+
+<!-- 添加版权声明》 -->
+        
+      <!-- 声明结束 -->
   
     <article id="post-SQL注入全方位利用之显错注入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1031,6 +1414,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">SSH公钥认证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Fastjson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">反序列化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反弹shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命令执行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">weblogic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CVE-2019-2888</a>
               </li>
             
             <div class="clearfix"></div>
