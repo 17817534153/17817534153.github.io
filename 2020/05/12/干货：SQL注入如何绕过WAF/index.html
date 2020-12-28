@@ -5,24 +5,24 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>干货：SQL注入如何绕过WAF | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在进行渗透测试的时候，各式各样的waf层出不穷，阻拦了我们渗透测试的步伐。为了让大家少走一些弯路，我特地为大家出一篇文章，教大家如何绕过waf。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="干货：SQL注入如何绕过WAF">
-<meta property="og:url" content="https://17817534153.github.io/2020/05/12/%E5%B9%B2%E8%B4%A7%EF%BC%9ASQL%E6%B3%A8%E5%85%A5%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87WAF/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/05/12/%E5%B9%B2%E8%B4%A7%EF%BC%9ASQL%E6%B3%A8%E5%85%A5%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87WAF/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="在进行渗透测试的时候，各式各样的waf层出不穷，阻拦了我们渗透测试的步伐。为了让大家少走一些弯路，我特地为大家出一篇文章，教大家如何绕过waf。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-60.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-61.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-62.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-64.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-65.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-68.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-69.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-70.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-60.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-61.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-62.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-64.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-65.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-68.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-69.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-70.png">
 <meta property="article:published_time" content="2020-05-12T11:05:13.000Z">
 <meta property="article:modified_time" content="2020-11-25T03:41:38.216Z">
 <meta property="article:author" content="A Jie">
@@ -30,7 +30,7 @@
 <meta property="article:tag" content="WAF">
 <meta property="article:tag" content="绕过">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/pasted-60.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/pasted-60.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -108,7 +108,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -155,7 +155,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -435,7 +435,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/05/12/%E5%B9%B2%E8%B4%A7%EF%BC%9ASQL%E6%B3%A8%E5%85%A5%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87WAF/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/05/12/%E5%B9%B2%E8%B4%A7%EF%BC%9ASQL%E6%B3%A8%E5%85%A5%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87WAF/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -522,7 +522,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/05/12/干货：SQL注入如何绕过WAF/" title="干货：SQL注入如何绕过WAF" target="_blank">https://17817534153.github.io/2020/05/12/干货：SQL注入如何绕过WAF/</a>
+    <a href="https://j-ajie.github.io/2020/05/12/干货：SQL注入如何绕过WAF/" title="干货：SQL注入如何绕过WAF" target="_blank">https://j-ajie.github.io/2020/05/12/干货：SQL注入如何绕过WAF/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -530,7 +530,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/05/12/干货：SQL注入如何绕过WAF/" title="干货：SQL注入如何绕过WAF" target="_blank">干货：SQL注入如何绕过WAF</a>
+    <a href="https://j-ajie.github.io/2020/05/12/干货：SQL注入如何绕过WAF/" title="干货：SQL注入如何绕过WAF" target="_blank">干货：SQL注入如何绕过WAF</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>

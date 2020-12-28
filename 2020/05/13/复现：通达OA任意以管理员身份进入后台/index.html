@@ -5,26 +5,26 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>复现：通达OA任意以管理员身份进入后台 | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="日前通达OA爆出一个大漏洞，用户可以在登录界面，通过修改cookie的方式，以管理员身份登录后台，这里我就来复现一次。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="复现：通达OA任意以管理员身份进入后台">
-<meta property="og:url" content="https://17817534153.github.io/2020/05/13/%E5%A4%8D%E7%8E%B0%EF%BC%9A%E9%80%9A%E8%BE%BEOA%E4%BB%BB%E6%84%8F%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%9B%E5%85%A5%E5%90%8E%E5%8F%B0/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/05/13/%E5%A4%8D%E7%8E%B0%EF%BC%9A%E9%80%9A%E8%BE%BEOA%E4%BB%BB%E6%84%8F%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%9B%E5%85%A5%E5%90%8E%E5%8F%B0/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="日前通达OA爆出一个大漏洞，用户可以在登录界面，通过修改cookie的方式，以管理员身份登录后台，这里我就来复现一次。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-5.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-6.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-7.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-71.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-72.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-73.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-74.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-75.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-76.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-77.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-5.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-6.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-7.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-71.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-72.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-73.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-74.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-75.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-76.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-77.png">
 <meta property="article:published_time" content="2020-05-13T05:33:52.000Z">
 <meta property="article:modified_time" content="2020-11-25T03:41:12.341Z">
 <meta property="article:author" content="A Jie">
@@ -34,7 +34,7 @@
 <meta property="article:tag" content="实战演示">
 <meta property="article:tag" content="漏洞复现">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/pasted-5.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/pasted-5.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -112,7 +112,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -159,7 +159,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -403,7 +403,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/05/13/%E5%A4%8D%E7%8E%B0%EF%BC%9A%E9%80%9A%E8%BE%BEOA%E4%BB%BB%E6%84%8F%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%9B%E5%85%A5%E5%90%8E%E5%8F%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/05/13/%E5%A4%8D%E7%8E%B0%EF%BC%9A%E9%80%9A%E8%BE%BEOA%E4%BB%BB%E6%84%8F%E4%BB%A5%E7%AE%A1%E7%90%86%E5%91%98%E8%BA%AB%E4%BB%BD%E8%BF%9B%E5%85%A5%E5%90%8E%E5%8F%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -490,7 +490,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/05/13/复现：通达OA任意以管理员身份进入后台/" title="复现：通达OA任意以管理员身份进入后台" target="_blank">https://17817534153.github.io/2020/05/13/复现：通达OA任意以管理员身份进入后台/</a>
+    <a href="https://j-ajie.github.io/2020/05/13/复现：通达OA任意以管理员身份进入后台/" title="复现：通达OA任意以管理员身份进入后台" target="_blank">https://j-ajie.github.io/2020/05/13/复现：通达OA任意以管理员身份进入后台/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -498,7 +498,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/05/13/复现：通达OA任意以管理员身份进入后台/" title="复现：通达OA任意以管理员身份进入后台" target="_blank">复现：通达OA任意以管理员身份进入后台</a>
+    <a href="https://j-ajie.github.io/2020/05/13/复现：通达OA任意以管理员身份进入后台/" title="复现：通达OA任意以管理员身份进入后台" target="_blank">复现：通达OA任意以管理员身份进入后台</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>

@@ -5,37 +5,37 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>漏洞复现-Redis未授权访问 | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Redis概念redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push&#x2F;pop、add&#x2F;remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种不同">
 <meta property="og:type" content="article">
 <meta property="og:title" content="漏洞复现-Redis未授权访问">
-<meta property="og:url" content="https://17817534153.github.io/2020/11/29/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-Redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/11/29/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-Redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="Redis概念redis是一个key-value存储系统。和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(sorted set –有序集合)和hash（哈希类型）。这些数据类型都支持push&#x2F;pop、add&#x2F;remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis支持各种不同">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/14/1.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/2.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/3.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/4.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/5.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/6.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/7.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/8.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/9.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/10.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/11.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/12.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/13.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/14.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/15.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/16.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/17.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/18.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/19.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/20.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14/21.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/1.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/2.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/3.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/4.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/5.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/6.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/7.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/8.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/9.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/10.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/11.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/12.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/13.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/14.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/15.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/16.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/17.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/18.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/19.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/20.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14/21.png">
 <meta property="article:published_time" content="2020-11-29T03:37:12.000Z">
 <meta property="article:modified_time" content="2020-11-27T03:56:29.877Z">
 <meta property="article:author" content="A Jie">
@@ -45,7 +45,7 @@
 <meta property="article:tag" content="写shell">
 <meta property="article:tag" content="SSH公钥认证">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/14/1.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/14/1.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -123,7 +123,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -170,7 +170,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -450,7 +450,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/11/29/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-Redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/11/29/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-Redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -537,7 +537,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/11/29/漏洞复现-Redis未授权访问/" title="漏洞复现-Redis未授权访问" target="_blank">https://17817534153.github.io/2020/11/29/漏洞复现-Redis未授权访问/</a>
+    <a href="https://j-ajie.github.io/2020/11/29/漏洞复现-Redis未授权访问/" title="漏洞复现-Redis未授权访问" target="_blank">https://j-ajie.github.io/2020/11/29/漏洞复现-Redis未授权访问/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -545,7 +545,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/11/29/漏洞复现-Redis未授权访问/" title="漏洞复现-Redis未授权访问" target="_blank">漏洞复现-Redis未授权访问</a>
+    <a href="https://j-ajie.github.io/2020/11/29/漏洞复现-Redis未授权访问/" title="漏洞复现-Redis未授权访问" target="_blank">漏洞复现-Redis未授权访问</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>

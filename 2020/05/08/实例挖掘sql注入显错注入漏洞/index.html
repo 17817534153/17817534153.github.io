@@ -5,27 +5,27 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>花几分钟找个上市公司的SQL注入漏洞 | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="之前发出了一篇显错注入的文章之后，很多读者反馈说难度太大，看不懂，那么今天，我进行了改进，为大家推送一篇漏洞实例，实战演示怎么挖掘sql显错注入漏洞。最后说一句，我们要做一名合法的白帽子，要学会 点到为止 。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="花几分钟找个上市公司的SQL注入漏洞">
-<meta property="og:url" content="https://17817534153.github.io/2020/05/08/%E5%AE%9E%E4%BE%8B%E6%8C%96%E6%8E%98sql%E6%B3%A8%E5%85%A5%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/05/08/%E5%AE%9E%E4%BE%8B%E6%8C%96%E6%8E%98sql%E6%B3%A8%E5%85%A5%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="之前发出了一篇显错注入的文章之后，很多读者反馈说难度太大，看不懂，那么今天，我进行了改进，为大家推送一篇漏洞实例，实战演示怎么挖掘sql显错注入漏洞。最后说一句，我们要做一名合法的白帽子，要学会 点到为止 。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-41.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-42.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-43.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-33.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-34.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-35.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-36.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-37.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-38.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-39.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-40.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-41.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-42.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-43.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-33.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-34.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-35.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-36.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-37.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-38.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-39.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-40.png">
 <meta property="article:published_time" content="2020-05-08T14:07:05.000Z">
 <meta property="article:modified_time" content="2020-11-25T03:42:59.959Z">
 <meta property="article:author" content="A Jie">
@@ -35,7 +35,7 @@
 <meta property="article:tag" content="实战渗透">
 <meta property="article:tag" content="漏洞挖掘">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/pasted-41.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/pasted-41.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -113,7 +113,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -160,7 +160,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -413,7 +413,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/05/08/%E5%AE%9E%E4%BE%8B%E6%8C%96%E6%8E%98sql%E6%B3%A8%E5%85%A5%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/05/08/%E5%AE%9E%E4%BE%8B%E6%8C%96%E6%8E%98sql%E6%B3%A8%E5%85%A5%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -500,7 +500,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/05/08/实例挖掘sql注入显错注入漏洞/" title="花几分钟找个上市公司的SQL注入漏洞" target="_blank">https://17817534153.github.io/2020/05/08/实例挖掘sql注入显错注入漏洞/</a>
+    <a href="https://j-ajie.github.io/2020/05/08/实例挖掘sql注入显错注入漏洞/" title="花几分钟找个上市公司的SQL注入漏洞" target="_blank">https://j-ajie.github.io/2020/05/08/实例挖掘sql注入显错注入漏洞/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -508,7 +508,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/05/08/实例挖掘sql注入显错注入漏洞/" title="花几分钟找个上市公司的SQL注入漏洞" target="_blank">花几分钟找个上市公司的SQL注入漏洞</a>
+    <a href="https://j-ajie.github.io/2020/05/08/实例挖掘sql注入显错注入漏洞/" title="花几分钟找个上市公司的SQL注入漏洞" target="_blank">花几分钟找个上市公司的SQL注入漏洞</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>

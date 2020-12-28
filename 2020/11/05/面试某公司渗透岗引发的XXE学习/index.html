@@ -5,36 +5,36 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>面试某公司渗透岗引发的XXE学习 | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="刚刚进行了某公司渗透岗的面试，经历过多次面试的我发现，面试官很喜欢问XXE漏洞，而这也是很多人所不了解或者了解有限的，这里我希望通过一篇推文，让大家入门XXE漏洞，对于以后的面试甚至工作有所帮助。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试某公司渗透岗引发的XXE学习">
-<meta property="og:url" content="https://17817534153.github.io/2020/11/05/%E9%9D%A2%E8%AF%95%E6%9F%90%E5%85%AC%E5%8F%B8%E6%B8%97%E9%80%8F%E5%B2%97%E5%BC%95%E5%8F%91%E7%9A%84XXE%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/11/05/%E9%9D%A2%E8%AF%95%E6%9F%90%E5%85%AC%E5%8F%B8%E6%B8%97%E9%80%8F%E5%B2%97%E5%BC%95%E5%8F%91%E7%9A%84XXE%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="刚刚进行了某公司渗透岗的面试，经历过多次面试的我发现，面试官很喜欢问XXE漏洞，而这也是很多人所不了解或者了解有限的，这里我希望通过一篇推文，让大家入门XXE漏洞，对于以后的面试甚至工作有所帮助。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-41.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-42.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-43.png">
-<meta property="og:image" content="https://17817534153.github.io/images/1.png">
-<meta property="og:image" content="https://17817534153.github.io/images/2.png">
-<meta property="og:image" content="https://17817534153.github.io/images/3.png">
-<meta property="og:image" content="https://17817534153.github.io/images/4.png">
-<meta property="og:image" content="https://17817534153.github.io/images/5.png">
-<meta property="og:image" content="https://17817534153.github.io/images/6.png">
-<meta property="og:image" content="https://17817534153.github.io/images/7.png">
-<meta property="og:image" content="https://17817534153.github.io/images/8.png">
-<meta property="og:image" content="https://17817534153.github.io/images/9.png">
-<meta property="og:image" content="https://17817534153.github.io/images/10.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11.png">
-<meta property="og:image" content="https://17817534153.github.io/images/12.png">
-<meta property="og:image" content="https://17817534153.github.io/images/13.png">
-<meta property="og:image" content="https://17817534153.github.io/images/14.png">
-<meta property="og:image" content="https://17817534153.github.io/images/15.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16.png">
-<meta property="og:image" content="https://17817534153.github.io/images/17.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-41.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-42.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-43.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/1.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/2.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/3.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/4.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/5.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/6.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/7.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/8.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/9.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/10.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/12.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/13.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/14.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/15.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/17.png">
 <meta property="article:published_time" content="2020-11-05T07:54:05.000Z">
 <meta property="article:modified_time" content="2020-11-25T03:37:42.466Z">
 <meta property="article:author" content="A Jie">
@@ -44,7 +44,7 @@
 <meta property="article:tag" content="XML外部实体注入">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/pasted-41.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/pasted-41.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -122,7 +122,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -169,7 +169,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -502,7 +502,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/11/05/%E9%9D%A2%E8%AF%95%E6%9F%90%E5%85%AC%E5%8F%B8%E6%B8%97%E9%80%8F%E5%B2%97%E5%BC%95%E5%8F%91%E7%9A%84XXE%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/11/05/%E9%9D%A2%E8%AF%95%E6%9F%90%E5%85%AC%E5%8F%B8%E6%B8%97%E9%80%8F%E5%B2%97%E5%BC%95%E5%8F%91%E7%9A%84XXE%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -589,7 +589,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/11/05/面试某公司渗透岗引发的XXE学习/" title="面试某公司渗透岗引发的XXE学习" target="_blank">https://17817534153.github.io/2020/11/05/面试某公司渗透岗引发的XXE学习/</a>
+    <a href="https://j-ajie.github.io/2020/11/05/面试某公司渗透岗引发的XXE学习/" title="面试某公司渗透岗引发的XXE学习" target="_blank">https://j-ajie.github.io/2020/11/05/面试某公司渗透岗引发的XXE学习/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -597,7 +597,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/11/05/面试某公司渗透岗引发的XXE学习/" title="面试某公司渗透岗引发的XXE学习" target="_blank">面试某公司渗透岗引发的XXE学习</a>
+    <a href="https://j-ajie.github.io/2020/11/05/面试某公司渗透岗引发的XXE学习/" title="面试某公司渗透岗引发的XXE学习" target="_blank">面试某公司渗透岗引发的XXE学习</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>

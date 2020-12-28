@@ -5,24 +5,24 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>如何搭建自己的dnslog服务器 | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Dnslog即dns日志，通过记录访问了的域名或者子域名。在渗透测试过程中，攻击者往往无法直接获取相应的数据，那么就可以通过将数据拼接到dns中，将数据外带出来。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何搭建自己的dnslog服务器">
-<meta property="og:url" content="https://17817534153.github.io/2020/12/08/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84dnslog%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/12/08/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84dnslog%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="Dnslog即dns日志，通过记录访问了的域名或者子域名。在渗透测试过程中，攻击者往往无法直接获取相应的数据，那么就可以通过将数据拼接到dns中，将数据外带出来。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/18/1.png">
-<meta property="og:image" content="https://17817534153.github.io/images/18/2.png">
-<meta property="og:image" content="https://17817534153.github.io/images/18/3.png">
-<meta property="og:image" content="https://17817534153.github.io/images/18/4.png">
-<meta property="og:image" content="https://17817534153.github.io/images/18/5.png">
-<meta property="og:image" content="https://17817534153.github.io/images/18/6.png">
-<meta property="og:image" content="https://17817534153.github.io/images/18/7.png">
-<meta property="og:image" content="https://17817534153.github.io/images/18/8.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/18/1.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/18/2.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/18/3.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/18/4.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/18/5.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/18/6.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/18/7.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/18/8.png">
 <meta property="article:published_time" content="2020-12-08T02:58:18.000Z">
 <meta property="article:modified_time" content="2020-12-08T03:02:41.961Z">
 <meta property="article:author" content="A Jie">
@@ -31,7 +31,7 @@
 <meta property="article:tag" content="域名">
 <meta property="article:tag" content="dnslog搭建">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/18/1.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/18/1.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -109,7 +109,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -156,7 +156,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -360,7 +360,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/12/08/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84dnslog%E6%9C%8D%E5%8A%A1%E5%99%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/12/08/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84dnslog%E6%9C%8D%E5%8A%A1%E5%99%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -438,7 +438,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/12/08/如何搭建自己的dnslog服务器/" title="如何搭建自己的dnslog服务器" target="_blank">https://17817534153.github.io/2020/12/08/如何搭建自己的dnslog服务器/</a>
+    <a href="https://j-ajie.github.io/2020/12/08/如何搭建自己的dnslog服务器/" title="如何搭建自己的dnslog服务器" target="_blank">https://j-ajie.github.io/2020/12/08/如何搭建自己的dnslog服务器/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -446,7 +446,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/12/08/如何搭建自己的dnslog服务器/" title="如何搭建自己的dnslog服务器" target="_blank">如何搭建自己的dnslog服务器</a>
+    <a href="https://j-ajie.github.io/2020/12/08/如何搭建自己的dnslog服务器/" title="如何搭建自己的dnslog服务器" target="_blank">如何搭建自己的dnslog服务器</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>

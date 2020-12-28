@@ -5,35 +5,35 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>MySQL数据库的dnslog注入 | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="MySQL数据库作为使用数量最多的数据库，今天为大家带来一个dns注入教程，dns注入使用方法一般是在显错注入,报错注入都不能使用，盲注又太麻烦的情况下进行的，通过load_file()函数，解析dns的时候，将子查询的数据放入到dns日志中来获取数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL数据库的dnslog注入">
-<meta property="og:url" content="https://17817534153.github.io/2020/05/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84dnslog%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/05/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84dnslog%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="MySQL数据库作为使用数量最多的数据库，今天为大家带来一个dns注入教程，dns注入使用方法一般是在显错注入,报错注入都不能使用，盲注又太麻烦的情况下进行的，通过load_file()函数，解析dns的时候，将子查询的数据放入到dns日志中来获取数据。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-41.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-42.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-43.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-78.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-79.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-80.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-81.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-82.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-83.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-84.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-87.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-88.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-89.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-90.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-91.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-92.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-93.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-94.png">
-<meta property="og:image" content="https://17817534153.github.io/images/pasted-95.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-41.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-42.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-43.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-78.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-79.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-80.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-81.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-82.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-83.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-84.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-87.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-88.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-89.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-90.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-91.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-92.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-93.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-94.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/pasted-95.png">
 <meta property="article:published_time" content="2020-05-23T10:44:18.000Z">
 <meta property="article:modified_time" content="2020-11-25T03:39:13.975Z">
 <meta property="article:author" content="A Jie">
@@ -41,7 +41,7 @@
 <meta property="article:tag" content="dnslog">
 <meta property="article:tag" content="SQL注入">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/pasted-41.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/pasted-41.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -119,7 +119,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -166,7 +166,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -423,7 +423,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/05/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84dnslog%E6%B3%A8%E5%85%A5/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/05/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84dnslog%E6%B3%A8%E5%85%A5/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -510,7 +510,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/05/23/MySQL数据库的dnslog注入/" title="MySQL数据库的dnslog注入" target="_blank">https://17817534153.github.io/2020/05/23/MySQL数据库的dnslog注入/</a>
+    <a href="https://j-ajie.github.io/2020/05/23/MySQL数据库的dnslog注入/" title="MySQL数据库的dnslog注入" target="_blank">https://j-ajie.github.io/2020/05/23/MySQL数据库的dnslog注入/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -518,7 +518,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/05/23/MySQL数据库的dnslog注入/" title="MySQL数据库的dnslog注入" target="_blank">MySQL数据库的dnslog注入</a>
+    <a href="https://j-ajie.github.io/2020/05/23/MySQL数据库的dnslog注入/" title="MySQL数据库的dnslog注入" target="_blank">MySQL数据库的dnslog注入</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>

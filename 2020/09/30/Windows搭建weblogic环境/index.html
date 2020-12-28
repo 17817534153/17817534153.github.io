@@ -5,37 +5,37 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>Windows搭建weblogic环境 | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="介于网络上weblogic漏洞环境基本上都是通过docker+vulhub进行搭建的，而有的小伙伴想要通过windows来搭建而没有教程，下面我将向大家介绍如何通过windows来搭建weblogic环境。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows搭建weblogic环境">
-<meta property="og:url" content="https://17817534153.github.io/2020/09/30/Windows%E6%90%AD%E5%BB%BAweblogic%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/09/30/Windows%E6%90%AD%E5%BB%BAweblogic%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="介于网络上weblogic漏洞环境基本上都是通过docker+vulhub进行搭建的，而有的小伙伴想要通过windows来搭建而没有教程，下面我将向大家介绍如何通过windows来搭建weblogic环境。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/16/1.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/2.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/3.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/4.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/5.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/6.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/7.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/8.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/9.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/10.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/11.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/12.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/13.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/14.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/15.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/16.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/17.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/18.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/19.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/20.png">
-<meta property="og:image" content="https://17817534153.github.io/images/16/21.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/1.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/2.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/3.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/4.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/5.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/6.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/7.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/8.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/9.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/10.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/11.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/12.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/13.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/14.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/15.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/16.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/17.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/18.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/19.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/20.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/16/21.png">
 <meta property="article:published_time" content="2020-09-30T06:39:58.000Z">
 <meta property="article:modified_time" content="2020-11-30T07:07:51.336Z">
 <meta property="article:author" content="A Jie">
@@ -43,7 +43,7 @@
 <meta property="article:tag" content="weblogic">
 <meta property="article:tag" content="windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/16/1.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/16/1.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -121,7 +121,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -168,7 +168,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -408,7 +408,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/09/30/Windows%E6%90%AD%E5%BB%BAweblogic%E7%8E%AF%E5%A2%83/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/09/30/Windows%E6%90%AD%E5%BB%BAweblogic%E7%8E%AF%E5%A2%83/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -495,7 +495,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/09/30/Windows搭建weblogic环境/" title="Windows搭建weblogic环境" target="_blank">https://17817534153.github.io/2020/09/30/Windows搭建weblogic环境/</a>
+    <a href="https://j-ajie.github.io/2020/09/30/Windows搭建weblogic环境/" title="Windows搭建weblogic环境" target="_blank">https://j-ajie.github.io/2020/09/30/Windows搭建weblogic环境/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -503,7 +503,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/09/30/Windows搭建weblogic环境/" title="Windows搭建weblogic环境" target="_blank">Windows搭建weblogic环境</a>
+    <a href="https://j-ajie.github.io/2020/09/30/Windows搭建weblogic环境/" title="Windows搭建weblogic环境" target="_blank">Windows搭建weblogic环境</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>

@@ -5,88 +5,88 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://17817534153.github.io">
+  <link rel="dns-prefetch" href="https://j-ajie.github.io">
   <title>SQL注入之重新学习 | ajie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="SQL注入即是指web应用程序对用户输入数据的合法性没有判断或过滤不严，攻击者可以在web应用程序中事先定义好的查询语句的结尾上添加额外的SQL语句，在管理员不知情的情况下实现非法操作，以此来实现欺骗数据库服务器执行非授权的任意查询，从而进一步得到相应的数据信息。 在owasp top 10常年霸占榜首漏洞的位置，可以当之无愧称它为漏洞之王。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL注入之重新学习">
-<meta property="og:url" content="https://17817534153.github.io/2020/11/25/SQL%E6%B3%A8%E5%85%A5%E4%B9%8B%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:url" content="https://j-ajie.github.io/2020/11/25/SQL%E6%B3%A8%E5%85%A5%E4%B9%8B%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="ajie的个人博客">
 <meta property="og:description" content="SQL注入即是指web应用程序对用户输入数据的合法性没有判断或过滤不严，攻击者可以在web应用程序中事先定义好的查询语句的结尾上添加额外的SQL语句，在管理员不知情的情况下实现非法操作，以此来实现欺骗数据库服务器执行非授权的任意查询，从而进一步得到相应的数据信息。 在owasp top 10常年霸占榜首漏洞的位置，可以当之无愧称它为漏洞之王。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-138.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-139.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-140.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-141.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-142.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-143.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-144.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-145.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-146.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-147.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-148.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-149.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-150.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-151.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-152.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-153.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-154.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-155.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-156.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-157.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-158.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-159.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-160.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-161.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-162.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-163.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-164.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-165.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-166.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-167.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-168.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-169.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-170.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-171.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-172.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-173.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-174.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-175.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-176.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-177.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-178.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-179.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-180.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-181.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-182.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-183.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-184.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-185.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-186.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-187.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-188.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-189.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-190.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-191.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-192.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-193.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-194.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-195.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-196.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-197.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-198.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-199.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-200.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-201.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-202.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-203.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-204.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-205.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-206.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-207.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-208.png">
-<meta property="og:image" content="https://17817534153.github.io/images/11/pasted-209.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-138.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-139.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-140.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-141.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-142.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-143.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-144.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-145.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-146.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-147.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-148.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-149.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-150.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-151.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-152.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-153.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-154.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-155.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-156.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-157.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-158.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-159.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-160.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-161.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-162.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-163.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-164.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-165.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-166.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-167.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-168.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-169.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-170.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-171.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-172.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-173.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-174.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-175.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-176.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-177.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-178.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-179.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-180.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-181.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-182.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-183.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-184.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-185.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-186.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-187.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-188.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-189.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-190.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-191.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-192.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-193.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-194.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-195.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-196.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-197.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-198.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-199.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-200.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-201.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-202.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-203.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-204.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-205.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-206.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-207.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-208.png">
+<meta property="og:image" content="https://j-ajie.github.io/images/11/pasted-209.png">
 <meta property="article:published_time" content="2020-11-25T02:24:57.000Z">
 <meta property="article:modified_time" content="2020-11-25T03:38:33.645Z">
 <meta property="article:author" content="A Jie">
@@ -96,7 +96,7 @@
 <meta property="article:tag" content="SQL注入写webshell">
 <meta property="article:tag" content="dnslog注入">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://17817534153.github.io/images/11/pasted-138.png">
+<meta name="twitter:image" content="https://j-ajie.github.io/images/11/pasted-138.png">
   
     <link rel="alternative" href="/atom.xml" title="ajie的个人博客" type="application/atom+xml">
   
@@ -174,7 +174,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -221,7 +221,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/17817534153" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="/j-ajie" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -593,7 +593,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://17817534153.github.io/2020/11/25/SQL%E6%B3%A8%E5%85%A5%E4%B9%8B%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://j-ajie.github.io/2020/11/25/SQL%E6%B3%A8%E5%85%A5%E4%B9%8B%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -680,7 +680,7 @@
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="https://17817534153.github.io/2020/11/25/SQL注入之重新学习/" title="SQL注入之重新学习" target="_blank">https://17817534153.github.io/2020/11/25/SQL注入之重新学习/</a>
+    <a href="https://j-ajie.github.io/2020/11/25/SQL注入之重新学习/" title="SQL注入之重新学习" target="_blank">https://j-ajie.github.io/2020/11/25/SQL注入之重新学习/</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
@@ -688,7 +688,7 @@
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="https://17817534153.github.io/2020/11/25/SQL注入之重新学习/" title="SQL注入之重新学习" target="_blank">SQL注入之重新学习</a>
+    <a href="https://j-ajie.github.io/2020/11/25/SQL注入之重新学习/" title="SQL注入之重新学习" target="_blank">SQL注入之重新学习</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>
